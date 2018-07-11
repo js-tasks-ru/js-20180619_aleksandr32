@@ -27,5 +27,10 @@
     "karma-jasmine": "^1.1.0",
     "karma-json-reporter": "^1.2.1",
     "karma-phantomjs-launcher": "^1.0.4"
+  },
+  "dependencies": {
+    "chromedriver": "^2.40.0",
+    "nightwatch": "^0.9.21",
+    "puppeteer": "^1.5.0"
   }
 }
