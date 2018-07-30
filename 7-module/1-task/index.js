@@ -8,5 +8,22 @@
  * @return {Function}
  */
 function makeLogging(fn, log) {
+	
+  function wrapper() {
+      log.push([].slice.call(arguments));
+      return fn.apply(this, arguments);
+    }
 
+  return wrapper;
 }
+
+function work(a, b) {
+    return a + b;
+}
+
+let log = [];
+
+work = makeLogging(work, log);
+work(1, 2); // -> 3
+
+console.log(log[0][0] === 1, log[0][1] === 2);
